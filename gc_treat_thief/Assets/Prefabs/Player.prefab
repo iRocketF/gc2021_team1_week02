@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2178127208940901722}
   - component: {fileID: 2178127208940901723}
   - component: {fileID: 2178127208940901724}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 2178127209088811756}
   - component: {fileID: 2178127209088811745}
   - component: {fileID: 2178127209088811758}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 2178127209455971946}
   - component: {fileID: 2178127209455971947}
   - component: {fileID: 2178127209455971949}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Third Person Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 2178127209677877303}
   - component: {fileID: 2178127209677877300}
   - component: {fileID: 2178127209677877301}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -502,7 +502,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2178127209700943537}
   - component: {fileID: 2178127209700943550}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MiddleRig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -578,7 +578,7 @@ GameObject:
   - component: {fileID: 2178127210012016528}
   - component: {fileID: 2178127210012016529}
   - component: {fileID: 2178127210012016542}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -703,7 +703,7 @@ GameObject:
   - component: {fileID: 2178127210245237711}
   - component: {fileID: 2178127210245237697}
   - component: {fileID: 2178127210245237710}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -785,7 +785,7 @@ GameObject:
   - component: {fileID: 2178127210409690770}
   - component: {fileID: 2178127210409690771}
   - component: {fileID: 2178127210409690768}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -909,7 +909,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2178127210450496870}
   - component: {fileID: 2178127210450496871}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TopRig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -984,7 +984,7 @@ GameObject:
   - component: {fileID: 2178127210550337938}
   - component: {fileID: 2178127210550337940}
   - component: {fileID: 2178127210550337941}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -998,7 +998,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2178127210550337939}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1054,7 +1054,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2178127210970115846}
   - component: {fileID: 2178127210970115847}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BottomRig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1068,7 +1068,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2178127210970115844}
-  m_LocalRotation: {x: 0.029938348, y: -0, z: -0, w: 0.9995518}
+  m_LocalRotation: {x: 0.02993835, y: -0.0000000010749168, z: 3.2195666e-11, w: 0.9995518}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

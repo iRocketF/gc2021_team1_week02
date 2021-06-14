@@ -20,6 +20,11 @@ public class Fairy : MonoBehaviour
     private Vector3 currentTarget;
     private Vector3 previousTarget;
 
+    [SerializeField] private float sphereRadius = 5f;
+    [SerializeField] private LayerMask layerMask;
+
+    private bool followPlayer = false;
+
     void Start()
     {
         currentTarget = transform.position;
@@ -31,10 +36,13 @@ public class Fairy : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, currentTarget) < targetThreshold)
         {
-            Debug.Log("Choosing a new direction");
-            GetNewDestination();
+            if (!followPlayer)
+            {
+                GetNewDestination();
+            }
         }
 
+        LookForThePlayer();
         PingPong();
     }
 
@@ -51,7 +59,6 @@ public class Fairy : MonoBehaviour
         {
             if (NavMesh.SamplePosition(randomDirection, out hit, maxDistance, 1))
             {
-                Debug.Log("New destination OK");
                 previousTarget = currentTarget;
                 currentTarget = hit.position;
                 agent.SetDestination(currentTarget);
@@ -60,7 +67,6 @@ public class Fairy : MonoBehaviour
             }
             else
             {
-                Debug.Log("New destination not OK");
                 randomDirection = Random.insideUnitSphere * Random.Range(minDistance, maxDistance);
                 randomDirection += transform.position;
             }
@@ -73,6 +79,39 @@ public class Fairy : MonoBehaviour
             previousTarget = temporarySave;
             agent.SetDestination(currentTarget);
         }
+    }
+
+    void LookForThePlayer()
+    {
+        Vector3 enemyOrigin = transform.position;
+        Transform player = null;
+
+        Collider[] hitColliders = Physics.OverlapSphere(enemyOrigin, sphereRadius, layerMask);
+
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.gameObject.CompareTag("Player"))
+            {
+                player = hitCollider.transform;
+                FollowPlayer(player);
+                break;
+            }
+        }
+
+        if (player == null)
+        {
+            followPlayer = false;
+        }
+    }
+
+    void FollowPlayer(Transform target)
+    {
+        transform.LookAt(target);
+
+        previousTarget = currentTarget;
+        currentTarget = target.position;
+
+        agent.SetDestination(currentTarget);
     }
 
     void PingPong()
