@@ -6,6 +6,7 @@ public class ThirdPersonMovement : MonoBehaviour
 {
     public CharacterController controller;
     public Transform playerCam;
+    public Animator anims;
 
     public float speed;
     public float gravity;
@@ -16,6 +17,8 @@ public class ThirdPersonMovement : MonoBehaviour
     public float turnSmoothTime;
 
     float turnSmoothVelocity;
+
+
 
     void Start()
     {
@@ -32,7 +35,10 @@ public class ThirdPersonMovement : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
 
         if (Input.GetButtonDown("Jump") && controller.isGrounded)
+        {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            anims.SetTrigger("Jump");
+        }
 
         velocity.y += gravity * Time.deltaTime;
 
@@ -47,7 +53,11 @@ public class ThirdPersonMovement : MonoBehaviour
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(((moveDir.normalized * speed) * Time.deltaTime));
+
+            anims.SetBool("isWalking", true);
         }
+        else
+            anims.SetBool("isWalking", false);
 
         controller.Move(velocity * Time.deltaTime);
     }

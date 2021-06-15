@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 5179744849548691823}
   - component: {fileID: 174721928129216090}
   - component: {fileID: 3070309703306711909}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bush_leaves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
