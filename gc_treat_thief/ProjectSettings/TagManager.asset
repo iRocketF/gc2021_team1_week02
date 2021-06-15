@@ -8,13 +8,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Environment
+  - Environment - Solid
   - Water
   - UI
   - Enemy
   - Player
-  - 
-  - 
+  - Environment - WorldEdge
+  - Environment - NonSolid
   - 
   - 
   - 

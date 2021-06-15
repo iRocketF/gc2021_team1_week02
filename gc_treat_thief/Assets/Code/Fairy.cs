@@ -25,8 +25,11 @@ public class Fairy : MonoBehaviour
 
     private bool followPlayer = false;
 
+    private GameManager manager;
+
     void Start()
     {
+        manager = FindObjectOfType<GameManager>();
         currentTarget = transform.position;
         GetNewDestination();
     }
@@ -83,6 +86,7 @@ public class Fairy : MonoBehaviour
 
     void LookForThePlayer()
     {
+
         Vector3 enemyOrigin = transform.position;
         Transform player = null;
 
@@ -101,11 +105,15 @@ public class Fairy : MonoBehaviour
         if (player == null)
         {
             followPlayer = false;
+
+            manager.pIsChased = false;
         }
     }
 
     void FollowPlayer(Transform target)
     {
+        manager.pIsChased = true;
+
         transform.LookAt(target);
 
         previousTarget = currentTarget;
