@@ -96,8 +96,18 @@ public class Fairy : MonoBehaviour
         {
             if (hitCollider.gameObject.CompareTag("Player"))
             {
-                player = hitCollider.transform;
-                FollowPlayer(player);
+                ThirdPersonMovement pController = hitCollider.gameObject.GetComponent<ThirdPersonMovement>();
+
+                if (!pController.isHidden)
+                {
+                    player = hitCollider.transform;
+                    FollowPlayer(player);
+                }
+                else
+                {
+                    player = null;
+                }
+
                 break;
             }
         }

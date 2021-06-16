@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +19,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     float turnSmoothVelocity;
 
-
+    public bool isHidden = false;
 
     void Start()
     {
@@ -60,5 +61,15 @@ public class ThirdPersonMovement : MonoBehaviour
             anims.SetBool("isWalking", false);
 
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        isHidden = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        isHidden = false;
     }
 }
