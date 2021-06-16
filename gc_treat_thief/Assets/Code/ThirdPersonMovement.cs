@@ -20,6 +20,10 @@ public class ThirdPersonMovement : MonoBehaviour
     float turnSmoothVelocity;
 
     public bool isHidden = false;
+    public bool isInvulnerable = false;
+    public float invulnerableTimer = 2f;
+
+    public PlayerInventory inventory;
 
     void Start()
     {
@@ -65,11 +69,38 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        isHidden = true;
+        Debug.Log("Collided with " +  other.gameObject.name);
+        if (other.gameObject.layer == 9)
+        {
+            isHidden = true;
+        }
+        else if (other.gameObject.layer == 6 && !isInvulnerable)
+        {
+            isInvulnerable = true;
+
+            if (inventory.treatsCollected >= 2)
+            {
+                inventory.treatsCollected -= 2;
+            }
+            else
+            {
+                inventory.treatsCollected = 0;
+            }
+
+            Invoke("VulnerableAgain", invulnerableTimer);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        isHidden = false;
+        if (other.gameObject.layer == 9)
+        {
+            isHidden = false;
+        }
+    }
+
+    private void VulnerableAgain()
+    {
+        isInvulnerable = false;
     }
 }
