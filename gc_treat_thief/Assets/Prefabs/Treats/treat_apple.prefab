@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 3080883129148480328}
   - component: {fileID: 3080883129148480329}
   m_Layer: 0
-  m_Name: Treat
+  m_Name: treat_apple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
