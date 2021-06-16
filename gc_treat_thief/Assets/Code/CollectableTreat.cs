@@ -29,6 +29,9 @@ public class CollectableTreat : MonoBehaviour
                 pInv.treatsCollected++;
 
                 GameObject particleClone = Instantiate(particles, startPos, rotPos);
+                TreatAudio treatSound = particleClone.GetComponent<TreatAudio>();
+
+                treatSound.SetSound(gameObject.name);
 
                 particleClone.AddComponent<CleanUp>();
 
