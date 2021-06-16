@@ -15,6 +15,7 @@ public class Nest : MonoBehaviour
 
     private void Start()
     {
+        storeSound = GetComponent<AudioSource>();
         manager = FindObjectOfType<GameManager>();
         pHud = FindObjectOfType<PlayerHUD>();
     }
@@ -27,10 +28,13 @@ public class Nest : MonoBehaviour
 
             if (pInv.treatsCollected > 0)
             {
+                storeSound.Play();
+
                 manager.gameTimer = manager.gameTimer + (timeAddedOnStore * pInv.treatsCollected);
-                pHud.SpawnEffect();
                 storedTreats = storedTreats + pInv.treatsCollected;
                 pInv.treatsCollected = pInv.treatsCollected - pInv.treatsCollected;
+
+                pHud.SpawnEffect();
             }
 
         }
