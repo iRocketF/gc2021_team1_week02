@@ -25,10 +25,17 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public PlayerInventory inventory;
 
+    public SkinnedMeshRenderer playerMesh;
+    private Material playerMaterial;
+    private Color pOriginalColor;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        playerMaterial = playerMesh.material;
+        pOriginalColor = playerMaterial.color;
     }
 
     void Update()
@@ -70,6 +77,11 @@ public class ThirdPersonMovement : MonoBehaviour
             anims.SetBool("isWalking", false);
 
         controller.Move(velocity * Time.deltaTime);
+
+        if (isInvulnerable)
+        {
+            ChangeColor();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -107,5 +119,11 @@ public class ThirdPersonMovement : MonoBehaviour
     private void VulnerableAgain()
     {
         isInvulnerable = false;
+        playerMaterial.color = pOriginalColor;
+    }
+
+    private void ChangeColor()
+    {
+        playerMaterial.color = Color.Lerp(Color.white, Color.red, Mathf.PingPong(Time.time, 1));
     }
 }
