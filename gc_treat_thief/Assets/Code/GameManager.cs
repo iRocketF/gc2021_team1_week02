@@ -9,18 +9,29 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private AudioSource chaseMusic;
 
+    public bool isGameActive;
+
     public bool pIsChased;
     public bool isChaseOn;
+
+    public float gameTimer;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        isGameActive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isGameActive)
+            gameTimer -= Time.deltaTime;
+
+        if (gameTimer <= 0)
+            isGameActive = false;
+
+
         UpdateMusic();
     }
 
