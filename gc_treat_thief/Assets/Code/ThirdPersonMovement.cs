@@ -40,6 +40,11 @@ public class ThirdPersonMovement : MonoBehaviour
             anims.SetTrigger("Jump");
         }
 
+        if (controller.isGrounded)
+            anims.SetBool("isAirborne", false);
+        else
+            anims.SetBool("isAirborne", true);
+
         velocity.y += gravity * Time.deltaTime;
 
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
