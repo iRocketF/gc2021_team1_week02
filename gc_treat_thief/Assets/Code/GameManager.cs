@@ -25,7 +25,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         gameTimer = gameLength;
+
         isGameActive = false;
+        isMusicFading = false;
+        isChaseOn = false;
 
         GameObject[] managers = GameObject.FindGameObjectsWithTag("GameController");
 
@@ -48,10 +51,13 @@ public class GameManager : MonoBehaviour
             isGameActive = false;
 
         if (!isGameActive)
-            if (Input.GetAxis("Reload") >= 0.5f)
-                SceneManager.LoadScene("Scene_Eero");
+            if (Input.GetAxis("Reload") >= 0.5f) 
+            {
+                SceneManager.LoadScene(2);
+                gameTimer = gameLength;
+            }
                 
-
+                
         UpdateMusic();
     }
 
