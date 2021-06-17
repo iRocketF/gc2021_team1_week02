@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private AudioSource chaseMusic;
 
+    public GameObject[] treats;
+
     public bool isGameActive;
 
     public bool pIsChased;
@@ -20,6 +22,8 @@ public class GameManager : MonoBehaviour
     public float gameLength;
     public float messageTime;
     public float messageTimer;
+
+    public int treatsLeft;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +39,8 @@ public class GameManager : MonoBehaviour
         if (managers.Length > 1)
             Destroy(gameObject);
 
+        treatsLeft = treats.Length;
+
         DontDestroyOnLoad(gameObject);
     }
 
@@ -42,7 +48,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(2))
+        {
+            treats = GameObject.FindGameObjectsWithTag("Treat");
+
             isGameActive = true;
+        }
 
         if (isGameActive)
             gameTimer -= Time.deltaTime;

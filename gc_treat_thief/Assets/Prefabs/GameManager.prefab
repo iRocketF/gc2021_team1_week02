@@ -53,7 +53,7 @@ MonoBehaviour:
   isChaseOn: 0
   isMusicFading: 0
   gameTimer: 0
-  gameLength: 30
+  gameLength: 60
   messageTime: 5
   messageTimer: 0
 --- !u!114 &7486984972987923690
