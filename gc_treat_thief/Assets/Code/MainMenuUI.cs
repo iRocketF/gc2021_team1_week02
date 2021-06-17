@@ -17,13 +17,13 @@ public class MainMenuUI : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("Play pressed, start the game");
-        //SceneManager.LoadScene(gameScene);
+        SceneManager.LoadScene(2);
     }
 
     public void Settings()
     {
         Debug.Log("Settings pressed, open the settings");
-        // Add functionality later
+        SceneManager.LoadScene(1);
     }
 
     public void QuitGame()
