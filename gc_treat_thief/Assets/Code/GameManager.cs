@@ -24,13 +24,23 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameLength = gameTimer;
-        isGameActive = true;
+        gameTimer = gameLength;
+        isGameActive = false;
+
+        GameObject[] managers = GameObject.FindGameObjectsWithTag("GameController");
+
+        if (managers.Length > 1)
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(2))
+            isGameActive = true;
+
         if (isGameActive)
             gameTimer -= Time.deltaTime;
 
@@ -47,13 +57,13 @@ public class GameManager : MonoBehaviour
 
     void UpdateMusic()
     {
-        if (pIsChased && !isChaseOn)
+        if (pIsChased && !isChaseOn && !isMusicFading)
         {
             StartCoroutine(FadeMusic.StartFade(mainMusic, 2f, 0f));
             StartCoroutine(FadeMusic.StartFade(chaseMusic, 2f, 0.5f));
             isChaseOn = true;
         }
-        else if (!pIsChased && isChaseOn)
+        else if (!pIsChased && isChaseOn && !isMusicFading)
         {
             StartCoroutine(FadeMusic.StartFade(chaseMusic, 2f, 0f));
             StartCoroutine(FadeMusic.StartFade(mainMusic, 2f, 0.5f));

@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Scene_Eero.unity
-    guid: 3fd3704dde0235d48a7e75d0ce61c70d
+    path: Assets/Scenes/MainMenu.unity
+    guid: 48c40239a691d244cadaa8ce8d4eaff5
+  - enabled: 1
+    path: Assets/Scenes/SettingsMenu.unity
+    guid: d9144c55cd606594a8939afc67f12f6f
+  - enabled: 1
+    path: Assets/Scenes/Scene_Final.unity
+    guid: 031846233a646e144bee0509835cb083
   m_configObjects: {}
