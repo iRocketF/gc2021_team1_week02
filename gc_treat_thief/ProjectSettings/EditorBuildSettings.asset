@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Scene_Eero.unity
+    guid: 3fd3704dde0235d48a7e75d0ce61c70d
   m_configObjects: {}
