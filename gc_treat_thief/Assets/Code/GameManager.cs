@@ -5,26 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]
-    private AudioSource mainMusic;
-    [SerializeField]
-    private AudioSource chaseMusic;
+
+    [SerializeField]  private AudioSource mainMusic;
+    [SerializeField]  private AudioSource chaseMusic;
 
     public GameObject[] treats;
 
     public bool isGameActive;
-
     public bool pIsChased;
     public bool isChaseOn;
     public bool isMusicFading;
+    public bool isAmountSet;
 
     public float gameTimer;
     public float gameLength;
     public float messageTime;
     public float messageTimer;
 
-    public int treatsAmount;
-    public int treatsLeft;
+    public float treatsAmount;
+    public float treatsLeft;
 
     // Start is called before the first frame update
     void Start()
@@ -46,18 +45,34 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(2))
+        if (gameTimer > 0f)
         {
-            treats = GameObject.FindGameObjectsWithTag("Treat");
-            treatsLeft = treats.Length;
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(2))
+            {
+                treats = GameObject.FindGameObjectsWithTag("Treat");
+                treatsLeft = treats.Length;
 
-            isGameActive = true;
+                isGameActive = true;
+
+                if (!isAmountSet)
+                {
+                    isAmountSet = true;
+                    treatsAmount = treatsLeft;
+                }
+            }
+
+            else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(0))
+            {
+                gameTimer = gameLength;
+                isGameActive = false;
+            }
+                
         }
 
         if (isGameActive)
             gameTimer -= Time.deltaTime;
 
-        if (gameTimer <= 0)
+        if (gameTimer <= 0f)
             isGameActive = false;
 
         if (!isGameActive)
@@ -65,6 +80,7 @@ public class GameManager : MonoBehaviour
             {
                 SceneManager.LoadScene(2);
                 gameTimer = gameLength;
+                messageTime = 0f;
             }
                 
                 

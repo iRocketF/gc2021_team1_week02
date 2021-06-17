@@ -12,6 +12,8 @@ public class PlayerHUD : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timer;
     [SerializeField] private TextMeshProUGUI treats;
     [SerializeField] private TextMeshProUGUI treatsStored;
+    [SerializeField] private TextMeshProUGUI treatsLeft;
+
     [SerializeField] private TextMeshProUGUI timeAdded;
     [SerializeField] private TextMeshProUGUI gameStatus;
 
@@ -36,6 +38,7 @@ public class PlayerHUD : MonoBehaviour
         timer.text = Mathf.RoundToInt(manager.gameTimer).ToString();
         treats.text = "Carrying: " + pInv.treatsCollected.ToString() + " / 5";
         treatsStored.text = "Stored: " + pNest.storedTreats.ToString() + " / " + manager.treatsAmount;
+        treatsLeft.text = "Left: " + manager.treatsLeft.ToString();
 
         if (manager.isGameActive && manager.messageTimer < manager.messageTime)
         {
@@ -45,7 +48,7 @@ public class PlayerHUD : MonoBehaviour
         else if (manager.isGameActive && manager.gameTimer < (manager.gameLength - manager.messageTime))
             gameStatus.text = " ";
         else if (!manager.isGameActive)
-            gameStatus.text = "GAME OVER \n \n R TO RESTART";
+            gameStatus.text = "GAME OVER \n You collected " + ((pNest.storedTreats / manager.treatsAmount) * 100) + "% of treats" + " \n R TO RESTART";
     }
  
 

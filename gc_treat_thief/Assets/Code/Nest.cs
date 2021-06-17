@@ -26,7 +26,7 @@ public class Nest : MonoBehaviour
         {
             PlayerInventory pInv = other.GetComponent<PlayerInventory>();
 
-            if (pInv.treatsCollected > 0)
+            if (pInv.treatsCollected > 0 && manager.isGameActive)
             {
                 storeSound.Play();
 

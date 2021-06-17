@@ -4752,7 +4752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f75f41b40aa874e81089bf05fcdc37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  treatSound: {fileID: 0}
+  treatSound: {fileID: -2861715808759376671}
 --- !u!199 &4601713360981499552
 ParticleSystemRenderer:
   serializedVersion: 6
