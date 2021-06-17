@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public float messageTime;
     public float messageTimer;
 
+    public int treatsAmount;
     public int treatsLeft;
 
     // Start is called before the first frame update
@@ -39,8 +40,6 @@ public class GameManager : MonoBehaviour
         if (managers.Length > 1)
             Destroy(gameObject);
 
-        treatsLeft = treats.Length;
-
         DontDestroyOnLoad(gameObject);
     }
 
@@ -50,6 +49,7 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(2))
         {
             treats = GameObject.FindGameObjectsWithTag("Treat");
+            treatsLeft = treats.Length;
 
             isGameActive = true;
         }

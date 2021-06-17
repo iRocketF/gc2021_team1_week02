@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d56dcc3047c66459f5981edcc3b7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particles: {fileID: 4601713360981499553, guid: 67c2cfb5e8371b74abdbd7cecaaecf63, type: 3}
+  particles: {fileID: 5702186447751765144, guid: 168bc6f0e351ffc43b5b6f8bdafc461c, type: 3}
   startPos: {x: 0, y: 0, z: 0}
   rotPos: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1001 &7352978394045979262

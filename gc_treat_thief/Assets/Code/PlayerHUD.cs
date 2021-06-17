@@ -34,8 +34,8 @@ public class PlayerHUD : MonoBehaviour
     void UpdateGameStatus()
     {
         timer.text = Mathf.RoundToInt(manager.gameTimer).ToString();
-        treats.text = "Treats collected: " + pInv.treatsCollected.ToString() + " / 5";
-        treatsStored.text = "Treats stored: " + pNest.storedTreats.ToString();
+        treats.text = "Carrying: " + pInv.treatsCollected.ToString() + " / 5";
+        treatsStored.text = "Stored: " + pNest.storedTreats.ToString() + " / " + manager.treatsAmount;
 
         if (manager.isGameActive && manager.messageTimer < manager.messageTime)
         {
