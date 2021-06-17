@@ -134,9 +134,9 @@ public class Fairy : MonoBehaviour
 
     void PingPong()
     {
-        float mininum = 2f;
+        float minimum = transform.position.y;
 
-        float y = Mathf.PingPong(Time.time * speed, pingPongHeight) + mininum;
+        float y = Mathf.PingPong(Time.time * speed, pingPongHeight) + minimum;
         enemyObject.transform.position = new Vector3(transform.position.x, y, transform.position.z);
     }
 }
