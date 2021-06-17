@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5842736463043692485}
   - component: {fileID: 5842736463043692486}
   - component: {fileID: 5842736463043692487}
-  - component: {fileID: 5842736463043692484}
+  - component: {fileID: 1942740563217911595}
   m_Layer: 6
   m_Name: Fairy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,19 +82,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &5842736463043692484
-SphereCollider:
+--- !u!136 &1942740563217911595
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5842736463043692482}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.6
+  m_Height: 2.0967643
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0.54838216}
 --- !u!1 &5842736463428138857
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +109,7 @@ GameObject:
   - component: {fileID: 5842736463428138858}
   m_Layer: 6
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

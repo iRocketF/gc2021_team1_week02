@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,12 +19,23 @@ public class ThirdPersonMovement : MonoBehaviour
 
     float turnSmoothVelocity;
 
+    public bool isHidden = false;
+    public bool isInvulnerable = false;
+    public float invulnerableTimer = 2f;
 
+    public PlayerInventory inventory;
+
+    public SkinnedMeshRenderer playerMesh;
+    private Material playerMaterial;
+    private Color pOriginalColor;
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        playerMaterial = playerMesh.material;
+        pOriginalColor = playerMaterial.color;
     }
 
     void Update()
@@ -39,6 +51,11 @@ public class ThirdPersonMovement : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             anims.SetTrigger("Jump");
         }
+
+        if (controller.isGrounded)
+            anims.SetBool("isAirborne", false);
+        else
+            anims.SetBool("isAirborne", true);
 
         velocity.y += gravity * Time.deltaTime;
 
@@ -60,5 +77,53 @@ public class ThirdPersonMovement : MonoBehaviour
             anims.SetBool("isWalking", false);
 
         controller.Move(velocity * Time.deltaTime);
+
+        if (isInvulnerable)
+        {
+            ChangeColor();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Collided with " +  other.gameObject.name);
+        if (other.gameObject.layer == 9)
+        {
+            isHidden = true;
+        }
+        else if (other.gameObject.layer == 6 && !isInvulnerable)
+        {
+            isInvulnerable = true;
+
+            if (inventory.treatsCollected >= 2)
+            {
+                inventory.treatsCollected -= 2;
+            }
+            else
+            {
+                inventory.treatsCollected = 0;
+            }
+
+            Invoke("VulnerableAgain", invulnerableTimer);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.layer == 9)
+        {
+            isHidden = false;
+        }
+    }
+
+    private void VulnerableAgain()
+    {
+        isInvulnerable = false;
+        playerMaterial.color = pOriginalColor;
+    }
+
+    private void ChangeColor()
+    {
+        playerMaterial.color = Color.Lerp(Color.white, Color.red, Mathf.PingPong(Time.time, 1));
     }
 }

@@ -96,8 +96,18 @@ public class Fairy : MonoBehaviour
         {
             if (hitCollider.gameObject.CompareTag("Player"))
             {
-                player = hitCollider.transform;
-                FollowPlayer(player);
+                ThirdPersonMovement pController = hitCollider.gameObject.GetComponent<ThirdPersonMovement>();
+
+                if (!pController.isHidden)
+                {
+                    player = hitCollider.transform;
+                    FollowPlayer(player);
+                }
+                else
+                {
+                    player = null;
+                }
+
                 break;
             }
         }
@@ -124,9 +134,9 @@ public class Fairy : MonoBehaviour
 
     void PingPong()
     {
-        float mininum = 2f;
+        float minimum = transform.position.y;
 
-        float y = Mathf.PingPong(Time.time * speed, pingPongHeight) + mininum;
+        float y = Mathf.PingPong(Time.time * speed, pingPongHeight) + minimum;
         enemyObject.transform.position = new Vector3(transform.position.x, y, transform.position.z);
     }
 }

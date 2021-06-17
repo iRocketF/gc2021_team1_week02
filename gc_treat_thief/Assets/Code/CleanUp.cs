@@ -5,7 +5,7 @@ using UnityEngine;
 public class CleanUp : MonoBehaviour
 {
     private float timer;
-    private float cleanUpTimer = 5f;
+    private float cleanUpTimer = 3f;
 
     void Update()
     {
