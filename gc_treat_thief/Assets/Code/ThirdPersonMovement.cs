@@ -86,7 +86,6 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collided with " +  other.gameObject.name);
         if (other.gameObject.layer == 9)
         {
             isHidden = true;
