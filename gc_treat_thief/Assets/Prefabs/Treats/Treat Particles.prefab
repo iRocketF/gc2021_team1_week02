@@ -4752,6 +4752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f75f41b40aa874e81089bf05fcdc37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  treatSound: {fileID: 0}
 --- !u!199 &4601713360981499552
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -4825,10 +4826,10 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4601713360981499553}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: e11e4c42709bbcb42945bd0e1e45d2d0, type: 2}
+  m_audioClip: {fileID: 8300000, guid: d26f556b2b9f00140a10b20bc3870a34, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
