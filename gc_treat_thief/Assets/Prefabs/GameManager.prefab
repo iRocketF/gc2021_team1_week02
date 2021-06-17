@@ -53,6 +53,8 @@ MonoBehaviour:
   pIsChased: 0
   isChaseOn: 0
   gameTimer: 120
+  gameLength: 0
+  messageTime: 5
 --- !u!114 &7486984972987923690
 MonoBehaviour:
   m_ObjectHideFlags: 0

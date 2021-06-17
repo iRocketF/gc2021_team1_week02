@@ -37,8 +37,11 @@ public class PlayerHUD : MonoBehaviour
         treats.text = "Treats collected: " + pInv.treatsCollected.ToString();
         treatsStored.text = "Treats stored: " + pNest.storedTreats.ToString();
 
-        if (manager.isGameActive && manager.gameTimer >= (manager.gameLength - manager.messageTime))
-            gameStatus.text = "COLLECT TREATS \n BRING THEM  \n TO YOUR NEST";
+        if (manager.isGameActive && manager.messageTimer < manager.messageTime)
+        {
+            manager.messageTimer += Time.deltaTime;
+            gameStatus.text = "COLLECT TREATS \n AND BRING THEM  \n TO YOUR NEST";
+        }
         else if (manager.isGameActive && manager.gameTimer < (manager.gameLength - manager.messageTime))
             gameStatus.text = " ";
         else if (!manager.isGameActive)
