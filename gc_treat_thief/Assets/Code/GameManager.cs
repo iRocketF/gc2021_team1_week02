@@ -16,10 +16,13 @@ public class GameManager : MonoBehaviour
     public bool isChaseOn;
 
     public float gameTimer;
+    public float gameLength;
+    public float messageTime;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameLength = gameTimer;
         isGameActive = true;
     }
 
@@ -34,7 +37,7 @@ public class GameManager : MonoBehaviour
 
         if (!isGameActive)
             if (Input.GetAxis("Reload") >= 0.5f)
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene("Scene_Eero");
                 
 
         UpdateMusic();

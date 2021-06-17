@@ -13,6 +13,7 @@ public class PlayerHUD : MonoBehaviour
     [SerializeField] private TextMeshProUGUI treats;
     [SerializeField] private TextMeshProUGUI treatsStored;
     [SerializeField] private TextMeshProUGUI timeAdded;
+    [SerializeField] private TextMeshProUGUI gameStatus;
 
     public GameManager manager;
     public PlayerInventory pInv;
@@ -27,10 +28,23 @@ public class PlayerHUD : MonoBehaviour
 
     void Update()
     {
+        UpdateGameStatus();
+    }
+
+    void UpdateGameStatus()
+    {
         timer.text = Mathf.RoundToInt(manager.gameTimer).ToString();
         treats.text = "Treats collected: " + pInv.treatsCollected.ToString();
         treatsStored.text = "Treats stored: " + pNest.storedTreats.ToString();
+
+        if (manager.isGameActive && manager.gameTimer >= (manager.gameLength - manager.messageTime))
+            gameStatus.text = "COLLECT TREATS \n BRING THEM  \n TO YOUR NEST";
+        else if (manager.isGameActive && manager.gameTimer < (manager.gameLength - manager.messageTime))
+            gameStatus.text = " ";
+        else if (!manager.isGameActive)
+            gameStatus.text = "GAME OVER \n \n R TO RESTART";
     }
+ 
 
     public void SpawnEffect()
     {
