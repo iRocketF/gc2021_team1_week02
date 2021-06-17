@@ -100,6 +100,7 @@ public class Fairy : MonoBehaviour
 
                 if (!pController.isHidden)
                 {
+                    manager.pIsChased = true;
                     player = hitCollider.transform;
                     FollowPlayer(player);
                 }
@@ -122,7 +123,6 @@ public class Fairy : MonoBehaviour
 
     void FollowPlayer(Transform target)
     {
-        manager.pIsChased = true;
 
         transform.LookAt(target);
 

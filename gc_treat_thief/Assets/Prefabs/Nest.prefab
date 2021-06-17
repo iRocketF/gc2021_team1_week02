@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storedTreats: 0
-  timeAddedOnStore: 10
+  timeAddedOnStore: 5
   manager: {fileID: 0}
   pHud: {fileID: 0}
 --- !u!82 &6192710724428769179

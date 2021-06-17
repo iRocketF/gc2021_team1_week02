@@ -892,10 +892,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7486984972987923688, guid: 3189d14ef8ee3e4469d848e8f7eedfbc, type: 3}
-      propertyPath: gameTimer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7486984972987923689, guid: 3189d14ef8ee3e4469d848e8f7eedfbc, type: 3}
       propertyPath: m_RootOrder
       value: 0
