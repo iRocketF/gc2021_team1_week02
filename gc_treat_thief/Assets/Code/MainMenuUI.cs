@@ -16,19 +16,16 @@ public class MainMenuUI : MonoBehaviour
 
     public void StartGame()
     {
-        Debug.Log("Play pressed, start the game");
         SceneManager.LoadScene(2);
     }
 
     public void Settings()
     {
-        Debug.Log("Settings pressed, open the settings");
         SceneManager.LoadScene(1);
     }
 
     public void QuitGame()
     {
-        Debug.Log("Quit pressed, quit the game");
         Application.Quit();
     }
 }

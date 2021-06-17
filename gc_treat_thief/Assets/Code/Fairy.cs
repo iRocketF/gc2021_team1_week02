@@ -25,22 +25,30 @@ public class Fairy : MonoBehaviour
 
     private bool followPlayer = false;
 
+    public float failSafeTime = 5f;
+    private float currentTime;
+
     private GameManager manager;
 
     void Start()
     {
         manager = FindObjectOfType<GameManager>();
         currentTarget = transform.position;
+        currentTime = failSafeTime;
         GetNewDestination();
     }
 
     
     void Update()
     {
-        if (Vector3.Distance(transform.position, currentTarget) < targetThreshold)
+        currentTime -= Time.deltaTime;
+
+        if (Vector3.Distance(transform.position, currentTarget) < targetThreshold ||
+            currentTime <= 0)
         {
             if (!followPlayer)
             {
+                currentTime = failSafeTime;
                 GetNewDestination();
             }
         }
