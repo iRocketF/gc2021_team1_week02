@@ -14,10 +14,12 @@ public class GameManager : MonoBehaviour
 
     public bool pIsChased;
     public bool isChaseOn;
+    public bool isMusicFading;
 
     public float gameTimer;
     public float gameLength;
     public float messageTime;
+    public float messageTimer;
 
     // Start is called before the first frame update
     void Start()
