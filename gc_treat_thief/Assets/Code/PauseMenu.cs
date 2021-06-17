@@ -7,6 +7,12 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
+    private GameManager manager;
+
+    void Start()
+    {
+        manager = FindObjectOfType<GameManager>();
+    }
 
     public void Update()
     {
