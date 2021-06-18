@@ -91,6 +91,7 @@ public class GameManager : MonoBehaviour
     {
         if (pIsChased && !isChaseOn && !isMusicFading)
         {
+            Debug.Log("music change yes???");
             StartCoroutine(FadeMusic.StartFade(mainMusic, 2f, 0f));
             StartCoroutine(FadeMusic.StartFade(chaseMusic, 2f, 0.5f));
             isChaseOn = true;
