@@ -1691,6 +1691,9 @@ MonoBehaviour:
   invulnerableTimer: 2
   inventory: {fileID: 5920595911684688782}
   playerMesh: {fileID: 2642294002214192945}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &5920595911684688782
 MonoBehaviour:
   m_ObjectHideFlags: 0

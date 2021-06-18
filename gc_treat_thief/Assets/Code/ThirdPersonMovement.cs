@@ -29,6 +29,11 @@ public class ThirdPersonMovement : MonoBehaviour
     private Material playerMaterial;
     private Color pOriginalColor;
 
+    [SerializeField] private LayerMask layerMask;
+    public float sphereRadius = 8f;
+
+    private GameManager manager;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -36,6 +41,8 @@ public class ThirdPersonMovement : MonoBehaviour
 
         playerMaterial = playerMesh.material;
         pOriginalColor = playerMaterial.color;
+
+        manager = FindObjectOfType<GameManager>();
     }
 
     void Update()
@@ -82,6 +89,8 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             ChangeColor();
         }
+
+        CheckForFairies();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -124,5 +133,33 @@ public class ThirdPersonMovement : MonoBehaviour
     private void ChangeColor()
     {
         playerMaterial.color = Color.Lerp(Color.white, Color.red, Mathf.PingPong(Time.time, 1));
+    }
+
+    void CheckForFairies()
+    {
+        Vector3 origin = transform.position;
+        bool isEnemyNearby = false;
+
+        Collider[] hitColliders = Physics.OverlapSphere(origin, 8f, layerMask);
+
+        foreach (var hitCollider in hitColliders)
+        {
+            Debug.Log(hitCollider.gameObject.name + hitCollider.gameObject.layer);
+            if (hitCollider.gameObject.layer == 6)
+            {
+                isEnemyNearby = true;
+                manager.pIsChased = true;
+                break;
+            }
+            else
+            {
+                isEnemyNearby = false;
+            }
+        }
+
+        if (!isEnemyNearby)
+        {
+            manager.pIsChased = false;
+        }
     }
 }
