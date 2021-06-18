@@ -20,7 +20,7 @@ public class Fairy : MonoBehaviour
     private Vector3 currentTarget;
     private Vector3 previousTarget;
 
-    [SerializeField] private float sphereRadius = 5f;
+    [SerializeField] private float sphereRadius = 3f;
     [SerializeField] private LayerMask layerMask;
 
     private bool followPlayer = false;

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 100033840}
   - component: {fileID: 100033841}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Area Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 383953873}
   - component: {fileID: 383953875}
   - component: {fileID: 383953874}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5032,7 +5032,7 @@ GameObject:
   m_Component:
   - component: {fileID: 440049770}
   - component: {fileID: 440049771}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Halo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5125,7 +5125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1608368070}
   - component: {fileID: 41804277338151519}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fairy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5176,7 +5176,7 @@ GameObject:
   - component: {fileID: 1889202354}
   - component: {fileID: 1889202357}
   - component: {fileID: 1889202356}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5255,7 +5255,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7816936014151328061}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5286,7 +5286,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2031631284783757763}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wing_Right_Ar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5318,7 +5318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 543450652739725376}
   - component: {fileID: 1501835497}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fairy_anim_test4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5371,7 +5371,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 600724818847890833}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_end 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5402,7 +5402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1129603032129778642}
   - component: {fileID: 2026081559036127719}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5553,6 +5553,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 128
+  failSafeTime: 5
 --- !u!1 &6006181107977235187
 GameObject:
   m_ObjectHideFlags: 0
@@ -5562,7 +5563,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4105690466941789221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wing_Left_Ar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5594,7 +5595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5801887163114545724}
   - component: {fileID: 1373890577943349277}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wings.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5677,7 +5678,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8976929559116228600}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5707,7 +5708,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7580687331403555530}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
